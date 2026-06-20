@@ -9,7 +9,7 @@ import QtMultimedia
 PlasmoidItem {
     id: widget
 
-    Plasmoid.icon: 'image-gif'
+    Plasmoid.icon: 'image-video'
 
     width: 100
     height: 100
