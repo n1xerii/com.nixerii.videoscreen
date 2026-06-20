@@ -8,7 +8,7 @@
         ],
         "Category": "Graphics",
         "Description": "A plugin for adding and playing videos on the desktop.",
-        "Icon": "image-gif",
+        "Icon": "image-video",
         "Id": "com.nixerii.videoscreen",
         "License": "GPL-3.0",
         "Name": "VideoScreen",
