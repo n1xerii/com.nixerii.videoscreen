@@ -1,4 +1,4 @@
-# com.nixerii.videoscreen
+# VIDEOSCREEN
  KDE Plasma widget for adding and playing video files on the desktop.
 
 KDE STORE:
