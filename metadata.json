@@ -9,11 +9,11 @@
         "Category": "Graphics",
         "Description": "A plugin for adding and playing videos on the desktop.",
         "Icon": "image-gif",
-        "Id": "com.nixerii.videoframes",
+        "Id": "com.nixerii.videoscreen",
         "License": "GPL-3.0",
-        "Name": "VideoFrames",
+        "Name": "VideoScreen",
         "Version": "1.0.0",
-        "Website": "https://github.com/n1xerii/com.nixerii.videoframes"
+        "Website": "https://github.com/n1xerii/com.nixerii.videoscreen"
     },
     "X-Plasma-API-Minimum-Version": "6.0",
     "KPackageStructure": "Plasma/Applet"
