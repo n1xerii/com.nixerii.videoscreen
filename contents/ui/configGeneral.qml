@@ -57,13 +57,4 @@ Kirigami.FormLayout {
         placeholderText: i18n("default: 1")
         Kirigami.FormData.label: i18n("Opacity:")
     }
-    QQC2.Button {
-        id: videoOpacityReset
-
-        text: i18n("Reset")
-
-        onClicked: {
-            videoOpacity.text = i18n("1")
-        }
-    }
 }
