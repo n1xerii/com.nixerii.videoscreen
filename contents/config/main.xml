@@ -10,10 +10,12 @@
             <default>1</default>
         </entry>
         <entry name="videoVolume" type="String">
-            <default>1.0</default>
+            <default>1</default>
         </entry>
+
         <entry name="videoFillMode" type="Real">
             <default>0</default>
         </entry>
+            <default>1</default>
     </group>
 </kcfg>
