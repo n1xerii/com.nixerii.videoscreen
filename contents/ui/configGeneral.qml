@@ -10,6 +10,7 @@ Kirigami.FormLayout {
     property alias cfg_videoPath: videoPath.text
     property alias cfg_videoSpeed: videoSpeed.text
     property alias cfg_videoVolume: videoVolume.text
+    property alias cfg_videoMuted: videoMuted.checked
     property alias cfg_videoFillMode: videoFillMode.currentIndex
 
     // APPEARANCE
@@ -33,11 +34,19 @@ Kirigami.FormLayout {
         placeholderText: i18n("default: 1")
         Kirigami.FormData.label: i18n("Speed:")
     }
-    QQC2.TextField {
-        id: videoVolume
-
-        placeholderText: i18n("default: 1")
+    QQL.RowLayout {
         Kirigami.FormData.label: i18n("Volume:")
+
+        QQC2.TextField {
+            id: videoVolume
+            placeholderText: i18n("default: 1")
+            //Layout.fillWidth: true
+        }
+
+        QQC2.CheckBox {
+            id: videoMuted
+            text: i18n("Mute")
+        }
     }
     QQC2.ComboBox {
         id: videoFillMode

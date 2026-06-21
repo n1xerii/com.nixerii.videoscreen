@@ -27,6 +27,8 @@ Item {
         source: "file://" + plasmoid.configuration.videoPath
         playbackRate: parseFloat(plasmoid.configuration.videoSpeed) || 1.0
         volume: parseFloat(plasmoid.configuration.videoVolume) || 1.0
+        muted: plasmoid.configuration.videoMuted
+    }
 
         MouseArea {
             anchors.fill: parent
