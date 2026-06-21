@@ -13,6 +13,17 @@ Item {
     HoverHandler {
         id: hoverArea
     }
+    TapHandler {
+        id: tap
+
+        onTapped: {
+            if (video.playbackState === MediaPlayer.PlayingState)
+                video.pause()
+                else
+                    video.play()
+        }
+    }
+
     Video {
         id: video
 
