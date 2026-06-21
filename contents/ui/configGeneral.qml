@@ -71,8 +71,7 @@ Kirigami.FormLayout {
     }
     QQC2.CheckBox {
         id: noBackground
-
-        Kirigami.FormData.label: i18n("Transparent:")
+        Kirigami.FormData.label: i18n("Transparent background:")
     }
     QQC2.TextField {
         id: videoOpacity
