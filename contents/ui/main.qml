@@ -14,6 +14,7 @@ PlasmoidItem {
     width: 400
     height: 250
 
+    Plasmoid.backgroundHints: setBackground()
 
     compactRepresentation: Compact {}
     fullRepresentation: Full {}
