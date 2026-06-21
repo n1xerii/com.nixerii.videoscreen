@@ -21,6 +21,7 @@ Item {
 
         opacity: parseFloat(plasmoid.configuration.videoOpacity) || 1.0
         fillMode: widget.setFillMode()
+        mirrored: plasmoid.configuration.videoMirrored
 
         source: "file://" + plasmoid.configuration.videoPath
         playbackRate: parseFloat(plasmoid.configuration.videoSpeed) || 1.0

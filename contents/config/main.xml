@@ -22,5 +22,9 @@
         <entry name="videoOpacity" type="String">
             <default>1</default>
         </entry>
+
+        <entry name="videoMirrored" type="Real">
+            <default>false</default>
+        </entry>
     </group>
 </kcfg>
