@@ -17,7 +17,7 @@ PlasmoidItem {
     compactRepresentation: Compact {}
     fullRepresentation: Full {}
 
-    function chooseFill() {
+    function setFillMode() {
         switch (plasmoid.configuration.videoFillMode) {
             case 0:
                 return VideoOutput.Stretch
@@ -28,6 +28,16 @@ PlasmoidItem {
             case 2:
                 return VideoOutput.PreserveAspectCrop
                 break;
+            default:
+                return VideoOutput.Stretch
+                break;
         }
+    }
+
+    function setBackground() {
+        if (plasmoid.configuration.noBackground) {
+            return PlasmaCore.Types.NoBackground
+        }
+        return PlasmaCore.Types.TranslucentBackground
     }
 }

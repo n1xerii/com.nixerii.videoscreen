@@ -18,7 +18,7 @@ Item {
 
         loops: MediaPlayer.Infinite
 
-        fillMode: widget.chooseFill()
+        fillMode: widget.setFillMode()
 
         volume: parseFloat(plasmoid.configuration.videoVolume) || 1.0
         source: "file://" + plasmoid.configuration.videoPath
