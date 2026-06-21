@@ -45,6 +45,11 @@ Kirigami.FormLayout {
 
         Kirigami.FormData.label: i18n("Fill mode:")
     }
+
+    Kirigami.Separator {
+        Kirigami.FormData.isSection: true
+        Kirigami.FormData.label: i18n("Appearance")
+    }
     QQC2.CheckBox {
         id: noBackground
 
