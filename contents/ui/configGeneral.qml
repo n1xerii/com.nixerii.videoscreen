@@ -29,13 +29,13 @@ Kirigami.FormLayout {
     QQC2.TextField {
         id: videoSpeed
 
-        placeholderText: i18n("default: 1.0")
+        placeholderText: i18n("default: 1")
         Kirigami.FormData.label: i18n("Speed:")
     }
     QQC2.TextField {
         id: videoVolume
 
-        placeholderText: i18n("default: 1.0")
+        placeholderText: i18n("default: 1")
         Kirigami.FormData.label: i18n("Volume:")
     }
 
@@ -54,16 +54,16 @@ Kirigami.FormLayout {
     QQC2.TextField {
         id: videoOpacity
 
-        placeholderText: i18n("default: 1.0")
+        placeholderText: i18n("default: 1")
         Kirigami.FormData.label: i18n("Opacity:")
     }
     QQC2.Button {
         id: videoOpacityReset
 
-        text: qsTr("Reset")
+        text: i18n("Reset")
 
         onClicked: {
-            videoOpacity.text = i18n("1.0")
+            videoOpacity.text = i18n("1")
         }
     }
 }
