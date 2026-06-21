@@ -37,4 +37,18 @@ Item {
             }
         }
     }
+
+    /*
+    PlasmaComponents.Button {
+        id: popupButton
+
+        width: parent.width
+        height: parent.height
+        opacity: 0
+
+        onClicked: {
+            widget.expanded = !widget.expanded
+        }
+    }
+    */
 }
