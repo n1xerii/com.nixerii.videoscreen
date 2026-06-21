@@ -22,9 +22,9 @@ Item {
         opacity: parseFloat(plasmoid.configuration.videoOpacity) || 1.0
         fillMode: widget.setFillMode()
 
-        volume: parseFloat(plasmoid.configuration.videoVolume) || 1.0
         source: "file://" + plasmoid.configuration.videoPath
         playbackRate: parseFloat(plasmoid.configuration.videoSpeed) || 1.0
+        volume: parseFloat(plasmoid.configuration.videoVolume) || 1.0
 
         MouseArea {
             anchors.fill: parent
@@ -32,8 +32,8 @@ Item {
             onClicked: {
                 if (video.playbackState === MediaPlayer.PlayingState)
                     video.pause()
-                    else
-                        video.play()
+                else
+                    video.play()
             }
         }
     }
