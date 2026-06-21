@@ -11,6 +11,7 @@ Item {
 
     Video {
         id: video
+
         autoPlay: true
 
         width: parent.width
@@ -18,6 +19,7 @@ Item {
 
         loops: MediaPlayer.Infinite
 
+        opacity: parseFloat(plasmoid.configuration.videoOpacity) || 1.0
         fillMode: widget.setFillMode()
 
         volume: parseFloat(plasmoid.configuration.videoVolume) || 1.0
