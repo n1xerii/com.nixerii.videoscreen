@@ -11,6 +11,8 @@ Kirigami.FormLayout {
     property alias cfg_videoSpeed: videoSpeed.text
     property alias cfg_videoVolume: videoVolume.text
     property alias cfg_videoMuted: videoMuted.checked
+    property alias cfg_enableTimeSeek: enableTimeSeek.checked
+
     property alias cfg_videoFillMode: videoFillMode.currentIndex
 
     // APPEARANCE
@@ -48,6 +50,13 @@ Kirigami.FormLayout {
             text: i18n("Mute")
         }
     }
+    QQC2.CheckBox {
+        id: enableTimeSeek
+        Kirigami.FormData.label: i18n("Enable seekbar:")
+    }
+
+
+
     QQC2.ComboBox {
         id: videoFillMode
 

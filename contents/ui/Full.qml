@@ -10,6 +10,9 @@ import QtMultimedia
 Item {
     id: full
 
+    HoverHandler {
+        id: hoverArea
+    }
     Video {
         id: video
 
@@ -30,15 +33,24 @@ Item {
         muted: plasmoid.configuration.videoMuted
     }
 
-        MouseArea {
-            anchors.fill: parent
+    QQC2.Slider {
+        id: timeSeek
+        visible: plasmoid.configuration.enableTimeSeek && hoverArea.hovered
 
-            onClicked: {
-                if (video.playbackState === MediaPlayer.PlayingState)
-                    video.pause()
-                else
-                    video.play()
-            }
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+            margins: 8
+        }
+
+        from: 0
+        to: video.duration > 0 ? video.duration : 1
+
+        value: pressed ? value : video.position
+
+        onMoved: {
+            video.position = value
         }
     }
 }

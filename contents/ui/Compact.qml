@@ -29,6 +29,7 @@ Item {
 
         MouseArea {
             anchors.fill: parent
+            hoverEnabled: true
 
             onClicked: {
                 if (video.playbackState === MediaPlayer.PlayingState)
