@@ -11,8 +11,9 @@ PlasmoidItem {
 
     Plasmoid.icon: 'image-video'
 
-    width: 300
-    height: 200
+    width: 400
+    height: 250
+
 
     compactRepresentation: Compact {}
     fullRepresentation: Full {}
