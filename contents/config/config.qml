@@ -4,7 +4,7 @@ import org.kde.plasma.configuration
 ConfigModel {
     ConfigCategory {
         name: i18n("General")
-        icon: "configure"
+        icon: "user-desktop"
         source: "configGeneral.qml"
     }
 }
