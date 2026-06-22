@@ -15,6 +15,9 @@ Kirigami.FormLayout {
 
     property alias cfg_videoFillMode: videoFillMode.currentIndex
 
+    property alias cfg_startAt: startAt.text
+    property alias cfg_endAt: endAt.text
+
     // APPEARANCE
     property alias cfg_noBackground: noBackground.checked
     property alias cfg_videoOpacity: videoOpacity.text
@@ -42,7 +45,6 @@ Kirigami.FormLayout {
         QQC2.TextField {
             id: videoVolume
             placeholderText: i18n("default: 1")
-            //Layout.fillWidth: true
         }
 
         QQC2.CheckBox {
@@ -56,7 +58,6 @@ Kirigami.FormLayout {
     }
 
 
-
     QQC2.ComboBox {
         id: videoFillMode
 
@@ -64,6 +65,16 @@ Kirigami.FormLayout {
 
         Kirigami.FormData.label: i18n("Fill mode:")
     }
+
+    QQC2.TextField {
+        id: startAt
+        Kirigami.FormData.label: i18n("Start at")
+    }
+    QQC2.TextField {
+        id: endAt
+        Kirigami.FormData.label: i18n("End at")
+    }
+
 
     Kirigami.Separator {
         Kirigami.FormData.isSection: true
@@ -81,7 +92,6 @@ Kirigami.FormLayout {
     }
     QQC2.CheckBox {
         id: videoMirrored
-
         Kirigami.FormData.label: i18n("Mirrored:")
     }
 }

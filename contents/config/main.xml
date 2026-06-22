@@ -22,6 +22,14 @@
         <entry name="videoFillMode" type="Real">
             <default>0</default>
         </entry>
+
+        <entry name="startAt" type="String">
+            <default>0</default>
+        </entry>
+        <entry name="endAt" type="String">
+            <default>1</default>
+        </entry>
+
         <entry name="noBackground" type="Bool">
             <default>false</default>
         </entry>
