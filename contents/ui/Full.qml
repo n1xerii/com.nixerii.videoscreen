@@ -42,8 +42,6 @@ Item {
         playbackRate: parseFloat(plasmoid.configuration.videoSpeed) || 1.0
         volume: parseFloat(plasmoid.configuration.videoVolume) || 1.0
         muted: plasmoid.configuration.videoMuted
-
-        //position: parseFloat(plasmoid.configuration.startAt) || 0.0
     }
 
     QQC2.Slider {

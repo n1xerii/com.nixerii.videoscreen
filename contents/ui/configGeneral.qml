@@ -15,9 +15,6 @@ Kirigami.FormLayout {
 
     property alias cfg_videoFillMode: videoFillMode.currentIndex
 
-    property alias cfg_startAt: startAt.text
-    property alias cfg_endAt: endAt.text
-
     // APPEARANCE
     property alias cfg_noBackground: noBackground.checked
     property alias cfg_videoOpacity: videoOpacity.text
@@ -57,22 +54,12 @@ Kirigami.FormLayout {
         Kirigami.FormData.label: i18n("Enable seekbar:")
     }
 
-
     QQC2.ComboBox {
         id: videoFillMode
 
         model: ["Stretch", "PreserveAspectFit", "PreserveAspectCrop"]
 
         Kirigami.FormData.label: i18n("Fill mode:")
-    }
-
-    QQC2.TextField {
-        id: startAt
-        Kirigami.FormData.label: i18n("Start at")
-    }
-    QQC2.TextField {
-        id: endAt
-        Kirigami.FormData.label: i18n("End at")
     }
 
 
