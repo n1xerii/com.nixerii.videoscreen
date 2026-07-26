@@ -29,9 +29,12 @@
         <entry name="videoOpacity" type="String">
             <default>1</default>
         </entry>
-
         <entry name="videoMirrored" type="Real">
             <default>false</default>
+        </entry>
+
+        <entry name="screenWidth" type="String">
+            <default>50</default>
         </entry>
     </group>
 </kcfg>

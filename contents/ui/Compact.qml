@@ -4,17 +4,20 @@ import org.kde.plasma.components as PlasmaComponents
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
 import QtMultimedia
+import QtQuick.Layouts
 
 Item {
     id: compact
 
+    Layout.preferredWidth: parseFloat(plasmoid.configuration.screenWidth) || 50.0
+    Layout.minimumWidth: parseFloat(plasmoid.configuration.screenWidth) || 50.0
+
     Video {
         id: video
 
-        autoPlay: true
+        anchors.fill: parent
 
-        width: parent.width
-        height: parent.height
+        autoPlay: true
 
         loops: MediaPlayer.Infinite
 

@@ -11,8 +11,7 @@ PlasmoidItem {
 
     Plasmoid.icon: 'image-video'
 
-    width: 400
-    height: 250
+    //Plasmoid.constraintHints: Plasmoid.CanFillArea
 
     Plasmoid.backgroundHints: setBackground()
 

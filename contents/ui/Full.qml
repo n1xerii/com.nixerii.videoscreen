@@ -10,6 +10,9 @@ import QtMultimedia
 Item {
     id: full
 
+    width: 200
+    height: 125
+
     HoverHandler {
         id: hoverArea
     }
@@ -27,10 +30,9 @@ Item {
     Video {
         id: video
 
-        autoPlay: true
+        anchors.fill: parent
 
-        width: parent.width
-        height: parent.height
+        autoPlay: true
 
         loops: MediaPlayer.Infinite
 
