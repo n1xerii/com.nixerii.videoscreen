@@ -10,9 +10,6 @@ import QtMultimedia
 Item {
     id: full
 
-    width: 200
-    height: 125
-
     HoverHandler {
         id: hoverArea
     }
@@ -25,25 +22,6 @@ Item {
                 else
                     video.play()
         }
-    }
-
-    Video {
-        id: video
-
-        anchors.fill: parent
-
-        autoPlay: true
-
-        loops: MediaPlayer.Infinite
-
-        opacity: parseFloat(plasmoid.configuration.videoOpacity) || 1.0
-        fillMode: widget.setFillMode()
-        mirrored: plasmoid.configuration.videoMirrored
-
-        source: "file://" + plasmoid.configuration.videoPath
-        playbackRate: parseFloat(plasmoid.configuration.videoSpeed) || 1.0
-        volume: parseFloat(plasmoid.configuration.videoVolume) || 1.0
-        muted: plasmoid.configuration.videoMuted
     }
 
     QQC2.Slider {
