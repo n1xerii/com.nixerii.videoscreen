@@ -60,8 +60,12 @@ Kirigami.FormLayout {
     QQC2.ComboBox {
         id: videoFillMode
 
-        model: ["Stretch", "PreserveAspectFit", "PreserveAspectCrop"]
-
+        model: [
+            "Stretch",
+            "PreserveAspectFit",
+            "PreserveAspectCrop"
+        ]
+        
         Kirigami.FormData.label: i18n("Fill mode:")
     }
 
