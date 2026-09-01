@@ -12,22 +12,31 @@ PlasmoidItem {
     Plasmoid.icon: 'image-video'
     Plasmoid.backgroundHints: setBackground()
 
-    Video {
-        id: video
+    MediaPlayer {
+        id: player
+
+        source: "file://" + plasmoid.configuration.videoPath
+
+        playbackRate: parseFloat(plasmoid.configuration.videoSpeed) || 1.0
+        loops: MediaPlayer.Infinite
+        autoPlay: true
+
+        audioOutput: AudioOutput {
+            volume: parseFloat(plasmoid.configuration.videoVolume) || 1.0
+            muted: plasmoid.configuration.videoMuted
+        }
+
+        videoOutput: videoOutput
+    }
+
+    VideoOutput {
+        id: videoOutput
 
         anchors.fill: parent
 
-        autoPlay: true
-        loops: MediaPlayer.Infinite
-
-        source: "file://" + plasmoid.configuration.videoPath
-        playbackRate: parseFloat(plasmoid.configuration.videoSpeed) || 1.0
-        volume: parseFloat(plasmoid.configuration.videoVolume) || 1.0
-        muted: plasmoid.configuration.videoMuted
-
-        opacity: parseFloat(plasmoid.configuration.videoOpacity) || 1.0
         fillMode: widget.setFillMode()
         mirrored: plasmoid.configuration.videoMirrored
+        opacity: plasmoid.configuration.videoOpacity
     }
 
     compactRepresentation: Compact {}

@@ -17,10 +17,10 @@ Item {
         hoverEnabled: true
 
         onClicked: {
-            if (video.playbackState === MediaPlayer.PlayingState)
-                video.pause()
+            if (player.playbackState === MediaPlayer.PlayingState)
+                player.pause()
             else
-                video.play()
+                player.play()
         }
     }
 }

@@ -17,10 +17,10 @@ Item {
         id: tap
 
         onTapped: {
-            if (video.playbackState === MediaPlayer.PlayingState)
-                video.pause()
+            if (player.playbackState === MediaPlayer.PlayingState)
+                player.pause()
                 else
-                    video.play()
+                    player.play()
         }
     }
 
@@ -36,12 +36,12 @@ Item {
         }
 
         from: 0
-        to: video.duration > 0 ? video.duration : 1
+        to: player.duration > 0 ? player.duration : 1
 
-        value: pressed ? value : video.position
+        value: pressed ? value : player.position
 
         onMoved: {
-            video.position = value
+            player.position = value
         }
     }
 }
