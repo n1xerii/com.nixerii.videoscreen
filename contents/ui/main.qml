@@ -34,7 +34,7 @@ PlasmoidItem {
 
         anchors.fill: parent
 
-        fillMode: widget.setFillMode()
+        fillMode: setFillMode()
         mirrored: plasmoid.configuration.videoMirrored
         opacity: plasmoid.configuration.videoOpacity
     }
