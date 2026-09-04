@@ -6,6 +6,12 @@
         <entry name="videoPath" type="String">
             <default></default>
         </entry>
+        <entry name="videoFolder" type="String">
+            <default></default>
+        </entry>
+        <entry name="videoInterval" type="Int">
+            <default>10</default>
+        </entry>
         <entry name="videoSpeed" type="String">
             <default>1</default>
         </entry>

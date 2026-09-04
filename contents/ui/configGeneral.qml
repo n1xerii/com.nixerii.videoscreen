@@ -1,13 +1,19 @@
 import QtQuick
-import QtQuick.Controls as QQC2
+import QtQuick.Controls as QQC
 import QtQuick.Layouts as QQL
+import QtQuick.Dialogs as QQD
+
 import org.kde.kirigami as Kirigami
 
 Kirigami.FormLayout {
     id: page
 
-    // GENERAL
+    // PATH
     property alias cfg_videoPath: videoPath.text
+    property alias cfg_videoFolder: folderField.text
+
+    // VIDEO PROPERTIES
+    property alias cfg_videoInterval: videoInterval.value
     property alias cfg_videoSpeed: videoSpeed.text
     property alias cfg_videoVolume: videoVolume.text
     property alias cfg_videoMuted: videoMuted.checked
@@ -27,13 +33,64 @@ Kirigami.FormLayout {
         Kirigami.FormData.isSection: true
         Kirigami.FormData.label: i18n("General")
     }
-    QQC2.TextField {
+
+    QQC.TextField {
         id: videoPath
 
-        Kirigami.FormData.label: i18n("Video path:")
+        QQC.ToolTip.text: "If empty, folder will be used"
+        QQC.ToolTip.visible: hovered
+
+        Kirigami.FormData.label: i18n("Single video:")
         placeholderText: i18n("path/to/video.ext")
     }
-    QQC2.TextField {
+
+
+    QQL.RowLayout {
+        Kirigami.FormData.label: i18n("Folder:")
+
+        QQD.FolderDialog {
+            id: folderDialog
+    
+            onAccepted: {
+                folderField.text = selectedFolder.toString()
+            }
+        }
+        QQC.TextField {
+            id: folderField
+            
+            placeholderText: i18n("example: file:///home/user/Videos/clips/")
+            QQC.ToolTip.text: "If empty, single video is used"
+            QQC.ToolTip.visible: hovered
+            
+            onAccepted: {
+                folderField.text = selectedFolder.toString()
+            }
+        }
+        QQC.Button {
+            id: chooseFolder
+            text: "Choose video folder"
+
+            onClicked: folderDialog.open()
+        }
+        QQC.Button {
+            id: resetFolder
+            text: "Reset folder"
+
+            onClicked: {
+                folderField.text = ""
+            }
+        }
+    }
+    QQC.SpinBox {
+        id: videoInterval
+        from: 1
+        to: 86400
+
+        Kirigami.FormData.label: i18n("Interval (seconds):")
+    }
+
+
+    QQC.TextField {
         id: videoSpeed
 
         placeholderText: i18n("default: 1")
@@ -42,22 +99,27 @@ Kirigami.FormLayout {
     QQL.RowLayout {
         Kirigami.FormData.label: i18n("Volume:")
 
-        QQC2.TextField {
+        QQC.TextField {
             id: videoVolume
             placeholderText: i18n("default: 1")
         }
 
-        QQC2.CheckBox {
+        QQC.CheckBox {
             id: videoMuted
             text: i18n("Mute")
         }
     }
-    QQC2.CheckBox {
+    QQC.CheckBox {
         id: enableTimeSeek
         Kirigami.FormData.label: i18n("Enable seekbar:")
     }
 
-    QQC2.ComboBox {
+    Kirigami.Separator {
+        Kirigami.FormData.isSection: true
+        Kirigami.FormData.label: i18n("Appearance")
+    }
+
+    QQC.ComboBox {
         id: videoFillMode
 
         model: [
@@ -68,33 +130,27 @@ Kirigami.FormLayout {
         
         Kirigami.FormData.label: i18n("Fill mode:")
     }
-
-
-    Kirigami.Separator {
-        Kirigami.FormData.isSection: true
-        Kirigami.FormData.label: i18n("Appearance")
-    }
-    QQC2.CheckBox {
+    QQC.CheckBox {
         id: noBackground
         Kirigami.FormData.label: i18n("Transparent background:")
     }
-    QQC2.TextField {
+    QQC.TextField {
         id: videoOpacity
 
         placeholderText: i18n("default: 1")
         Kirigami.FormData.label: i18n("Opacity:")
     }
-    QQC2.CheckBox {
+    QQC.CheckBox {
         id: videoMirrored
         Kirigami.FormData.label: i18n("Mirrored:")
     }
-
 
     Kirigami.Separator {
         Kirigami.FormData.isSection: true
         Kirigami.FormData.label: i18n("Panel")
     }
-    QQC2.TextField {
+
+    QQC.TextField {
         id: screenWidth
 
         placeholderText: i18n("default: 50")
