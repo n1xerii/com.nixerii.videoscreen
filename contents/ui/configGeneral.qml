@@ -34,16 +34,39 @@ Kirigami.FormLayout {
         Kirigami.FormData.label: i18n("General")
     }
 
-    QQC.TextField {
-        id: videoPath
+    QQL.RowLayout {
+        Kirigami.FormData.label: i18n("Single:")
 
-        QQC.ToolTip.text: "If empty, folder will be used"
-        QQC.ToolTip.visible: hovered
+        QQD.FileDialog {
+            id: singleDialog
+    
+            nameFilters: ["(*.mp4)", "(*.avi)", "(*.mov)", "(*.gif)", "(*.webp)", "(*.webm)"]
+            options: FileDialog.ReadOnly
 
-        Kirigami.FormData.label: i18n("Single video:")
-        placeholderText: i18n("path/to/video.ext")
+            onAccepted: videoPath.text = selectedFile.toString()
+        }
+        QQC.TextField {
+            id: videoPath
+
+            QQC.ToolTip.text: "If empty, folder will be used"
+            QQC.ToolTip.visible: hovered
+
+            Kirigami.FormData.label: i18n("Single video:")
+            placeholderText: i18n("file:///home/user/video.ext")
+        }
+        QQC.Button {
+            id: chooseSingle
+            text: i18n("Choose file")
+
+            onClicked: singleDialog.open()
+        }
+        QQC.Button {
+            id: resetVideo
+            text: i18n("Reset path")
+
+            onClicked: videoPath.text = ""
+        }
     }
-
 
     QQL.RowLayout {
         Kirigami.FormData.label: i18n("Folder:")
@@ -51,24 +74,20 @@ Kirigami.FormLayout {
         QQD.FolderDialog {
             id: folderDialog
     
-            onAccepted: {
-                folderField.text = selectedFolder.toString()
-            }
+            onAccepted: folderField.text = selectedFolder.toString()
         }
         QQC.TextField {
             id: folderField
             
-            placeholderText: i18n("example: file:///home/user/Videos/clips/")
+            placeholderText: i18n("example: file:///home/user/videos/")
             QQC.ToolTip.text: "If empty, single video is used"
             QQC.ToolTip.visible: hovered
             
-            onAccepted: {
-                folderField.text = selectedFolder.toString()
-            }
+            onAccepted: folderField.text = selectedFolder.toString()
         }
         QQC.Button {
             id: chooseFolder
-            text: "Choose video folder"
+            text: i18n("Choose folder")
 
             onClicked: folderDialog.open()
         }
@@ -76,9 +95,7 @@ Kirigami.FormLayout {
             id: resetFolder
             text: "Reset folder"
 
-            onClicked: {
-                folderField.text = ""
-            }
+            onClicked: folderField.text = ""
         }
     }
     QQC.SpinBox {

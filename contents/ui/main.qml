@@ -78,8 +78,6 @@ PlasmoidItem {
     fullRepresentation: Full {}
 
     function updateVideo() {
-        let filePath = "";
-
         if (folderMode == false && plasmoid.configuration.videoFolder !== "" && folderVideos.count > 0) {
             folderMode = true;
             finalPath = folderVideos.get(0, "fileUrl");
@@ -94,8 +92,7 @@ PlasmoidItem {
         }
         else {
             folderMode = false;
-            filePath = plasmoid.configuration.videoPath;
-            finalPath = "file://" + filePath;
+            finalPath = plasmoid.configuration.videoPath
         }
     }
 
