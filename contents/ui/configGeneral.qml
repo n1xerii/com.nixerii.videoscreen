@@ -13,6 +13,7 @@ Kirigami.FormLayout {
     property alias cfg_videoFolder: folderField.text
 
     // VIDEO PROPERTIES
+    property alias cfg_folderRandom: folderRandom.checked
     property alias cfg_videoInterval: videoInterval.value
     property alias cfg_videoSpeed: videoSpeed.text
     property alias cfg_videoVolume: videoVolume.text
@@ -98,14 +99,27 @@ Kirigami.FormLayout {
             onClicked: folderField.text = ""
         }
     }
-    QQC.SpinBox {
-        id: videoInterval
-        from: 1
-        to: 86400
 
+    QQL.RowLayout {
         Kirigami.FormData.label: i18n("Interval (seconds):")
-    }
 
+        QQC.SpinBox {
+            id: videoInterval
+            from: 1
+            to: 86400
+
+            Kirigami.FormData.label: i18n("Interval (seconds):")
+        }
+        QQC.CheckBox {
+            id: folderRandom
+
+            text: i18n("Random order")
+
+            onCheckedChanged: {
+                widget.folderIndex = 0;
+            }
+        }
+    }
 
     QQC.TextField {
         id: videoSpeed

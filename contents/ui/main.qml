@@ -88,6 +88,13 @@ PlasmoidItem {
             if (plasmoid.configuration.videoFolder === "" || folderVideos.count <= 0) {
                 folderMode = false;
             }
+
+            if (plasmoid.configuration.folderRandom) {
+                var randomIndex = Math.floor(Math.random() * folderVideos.count);
+                finalPath = folderVideos.get(randomIndex, "fileUrl");
+                return;
+            }
+
             finalPath = folderVideos.get(folderIndex, "fileUrl");
         }
         else {

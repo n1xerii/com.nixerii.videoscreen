@@ -12,6 +12,9 @@
         <entry name="videoInterval" type="Int">
             <default>10</default>
         </entry>
+        <entry name="folderRandom" type="Bool">
+            <default>false</default>
+        </entry>
         <entry name="videoSpeed" type="String">
             <default>1</default>
         </entry>
