@@ -80,6 +80,12 @@ PlasmoidItem {
     function updateVideo() {
         if (folderMode == false && plasmoid.configuration.videoFolder !== "" && folderVideos.count > 0) {
             folderMode = true;
+
+            if (plasmoid.configuration.folderRandom) {
+                var randomIndex = Math.floor(Math.random() * folderVideos.count);
+                finalPath = folderVideos.get(randomIndex, "fileUrl");
+                return;
+            }
             finalPath = folderVideos.get(0, "fileUrl");
             return;
         }
