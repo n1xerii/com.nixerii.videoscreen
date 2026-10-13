@@ -11,8 +11,8 @@
         "Icon": "image-video",
         "Id": "com.nixerii.videoscreen",
         "License": "GPL-3.0",
-        "Name": "Video Screen",
-        "Version": "2.7.0",
+        "Name": "Video Frame",
+        "Version": "2.7.1",
         "Website": "https://github.com/n1xerii/com.nixerii.videoscreen"
     },
     "X-Plasma-API-Minimum-Version": "6.0",
