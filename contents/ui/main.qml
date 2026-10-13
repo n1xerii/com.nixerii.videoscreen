@@ -62,6 +62,11 @@ PlasmoidItem {
         }
 
         videoOutput: videoOutput
+
+        onMediaStatusChanged: {
+            if (mediaStatus === MediaPlayer.LoadedMedia && autoPlay)
+                play()
+        }
     }
 
     VideoOutput {
