@@ -3,6 +3,7 @@
 
 **KDE STORE:**  
 https://store.kde.org/p/2363278  
-  
-**PLANNED**  
-- [ ] Support for transparent gifs  
+
+> [!NOTE]
+> **PLANNED FEATURES**
+> - Support for transparent gifs
