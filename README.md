@@ -5,4 +5,4 @@
 https://store.kde.org/p/2363278
 
 **PLANNED**
-- [] Support for transparent gifs.
+- [ ] Support for transparent gifs
