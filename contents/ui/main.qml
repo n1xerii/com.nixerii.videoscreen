@@ -14,6 +14,8 @@ PlasmoidItem {
     property bool folderMode: false
     property int folderIndex: 0
 
+    property bool isGif: finalPath.endsWith(".gif")
+
     Plasmoid.icon: 'image-video'
     Plasmoid.backgroundHints: setBackground()
 
@@ -49,8 +51,7 @@ PlasmoidItem {
     MediaPlayer {
         id: player
 
-        //source: "file://" + plasmoid.configuration.videoPath
-        source: finalPath
+        source: isGif ? "" : finalPath
 
         playbackRate: parseFloat(plasmoid.configuration.videoSpeed) || 1.0
         loops: MediaPlayer.Infinite
@@ -72,10 +73,28 @@ PlasmoidItem {
     VideoOutput {
         id: videoOutput
 
+        visible: !isGif
+
         anchors.fill: parent
 
         fillMode: setFillMode()
         mirrored: plasmoid.configuration.videoMirrored
+        opacity: plasmoid.configuration.videoOpacity
+    }
+
+    AnimatedImage {
+        id: animatedFrame
+
+        enabled: isGif
+        visible: isGif
+
+        source: isGif ? plasmoid.configuration.videoPath : ""
+        playing: isGif
+
+        anchors.fill: parent
+
+        fillMode: setFillMode()
+        mirror: plasmoid.configuration.videoMirrored
         opacity: plasmoid.configuration.videoOpacity
     }
 
