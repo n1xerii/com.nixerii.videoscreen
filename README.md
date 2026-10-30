@@ -6,4 +6,4 @@ https://store.kde.org/p/2363278
 
 > [!NOTE]
 > **📔 - PLANNED FEATURES**
-> - Support for transparent gifs
+> - /
