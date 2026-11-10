@@ -6,7 +6,6 @@ https://store.kde.org/p/2363278
 
 > [!NOTE]
 > **🔷 - FEATURES**
-> Features:
 > - Single video.
 > - Folder support.
 > - Random order for folders.
