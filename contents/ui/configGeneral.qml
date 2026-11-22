@@ -29,7 +29,7 @@ Kirigami.FormLayout {
     property alias cfg_videoMirrored: videoMirrored.checked
 
     // PANEL
-    property alias cfg_screenWidth: screenWidth.text
+    property alias cfg_panelWidth: panelWidth.text
 
     Kirigami.Separator {
         Kirigami.FormData.isSection: true
@@ -184,16 +184,10 @@ Kirigami.FormLayout {
         id: videoMirrored
         Kirigami.FormData.label: i18n("Mirrored:")
     }
-
-    Kirigami.Separator {
-        Kirigami.FormData.isSection: true
-        Kirigami.FormData.label: i18n("Panel")
-    }
-
     QQC.TextField {
-        id: screenWidth
+        id: panelWidth
 
         placeholderText: i18n("default: 50")
-        Kirigami.FormData.label: i18n("Width:")
+        Kirigami.FormData.label: i18n("Width(panel):")
     }
 }

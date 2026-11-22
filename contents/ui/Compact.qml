@@ -9,8 +9,8 @@ import QtQuick.Layouts
 Item {
     id: compact
 
-    Layout.preferredWidth: parseFloat(plasmoid.configuration.screenWidth) || 50.0
-    Layout.minimumWidth: parseFloat(plasmoid.configuration.screenWidth) || 50.0
+    Layout.preferredWidth: parseFloat(plasmoid.configuration.panelWidth) || 50.0
+    Layout.minimumWidth: parseFloat(plasmoid.configuration.panelWidth) || 50.0
 
     MouseArea {
         anchors.fill: parent
