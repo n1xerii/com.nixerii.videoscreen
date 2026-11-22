@@ -24,6 +24,7 @@ Kirigami.FormLayout {
 
     // APPEARANCE
     property alias cfg_noBackground: noBackground.checked
+    property alias cfg_rounding: rounding.value
     property alias cfg_videoOpacity: videoOpacity.text
     property alias cfg_videoMirrored: videoMirrored.checked
 
@@ -164,6 +165,14 @@ Kirigami.FormLayout {
     QQC.CheckBox {
         id: noBackground
         Kirigami.FormData.label: i18n("Frameless:")
+    }
+    QQC.SpinBox {
+        id: rounding
+
+        from: 0
+        value: 0
+        
+        Kirigami.FormData.label: i18n("Rounding:")
     }
     QQC.TextField {
         id: videoOpacity

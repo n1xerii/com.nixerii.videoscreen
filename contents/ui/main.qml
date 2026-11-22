@@ -6,6 +6,7 @@ import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
 import QtMultimedia
 import Qt.labs.folderlistmodel as QFLM
+import QtQuick.Effects
 
 PlasmoidItem {
     id: widget
@@ -70,32 +71,56 @@ PlasmoidItem {
         }
     }
 
-    VideoOutput {
-        id: videoOutput
-
-        visible: !isGif
-
+    Item {
+        id: mediaContainer
         anchors.fill: parent
 
-        fillMode: setFillMode()
-        mirrored: plasmoid.configuration.videoMirrored
-        opacity: plasmoid.configuration.videoOpacity
+        layer.enabled: true
+        layer.effect: MultiEffect {
+            maskEnabled: true
+            maskSource: roundingMask
+            maskThresholdMin: 0.5
+            maskSpreadAtMin: 1.0
+        }
+
+        VideoOutput {
+            id: videoOutput
+            anchors.fill: parent
+            enabled: !isGif
+            visible: !isGif
+            fillMode: setFillMode()
+            mirrored: plasmoid.configuration.videoMirrored
+            opacity: plasmoid.configuration.videoOpacity
+        }
+
+        AnimatedImage {
+            id: animatedFrame
+
+            enabled: isGif
+            visible: isGif
+
+            source: isGif ? plasmoid.configuration.videoPath : ""
+            playing: isGif
+
+            anchors.fill: parent
+
+            fillMode: setFillMode()
+            mirror: plasmoid.configuration.videoMirrored
+            opacity: plasmoid.configuration.videoOpacity
+        }
     }
 
-    AnimatedImage {
-        id: animatedFrame
-
-        enabled: isGif
-        visible: isGif
-
-        source: isGif ? plasmoid.configuration.videoPath : ""
-        playing: isGif
-
+    Item {
+        id: roundingMask
         anchors.fill: parent
+        layer.enabled: true
+        visible: false
 
-        fillMode: setFillMode()
-        mirror: plasmoid.configuration.videoMirrored
-        opacity: plasmoid.configuration.videoOpacity
+        Rectangle {
+            anchors.fill: parent
+            radius: plasmoid.configuration.rounding
+            color: "black"
+        }
     }
 
     compactRepresentation: Compact {}
