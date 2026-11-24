@@ -13,8 +13,8 @@ https://store.kde.org/p/2363278
 > - GIF support(including transparent gifs).
 > - Playback speed control.
 > - Volume and muting.
-> - Rounded corners.
 > - Frameless and opacity settings.
+> - Rounded corners.
 > - Fill modes.
 > - Desktop seekbar support.
 >
